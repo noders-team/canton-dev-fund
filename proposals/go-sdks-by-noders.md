@@ -26,6 +26,8 @@ The delivered work consists of:
 
 Although the grant program opened after the bulk of development was completed, the ecosystem need is ongoing: **these libraries must be maintained** (compatibility, security, CI/test matrices, documentation, bugfixes, and upstream coordination) so that teams can reliably build applications on Canton without re-implementing low-level integrations.
 
+All **Go** libraries are released under the **Apache 2.0** open source license.
+
 ---
 
 ## Specification
