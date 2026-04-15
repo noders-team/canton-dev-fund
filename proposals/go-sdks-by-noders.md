@@ -68,6 +68,7 @@ Teams that have already used the SDKs:
 
 - Confimarket
 - BitSafe
+- Kairo
   
 In parallel, we also asked existing SDK users to leave comments on this proposal, so that the review can be informed not only by our description of the work, but also by direct feedback from teams building with these libraries.
 
