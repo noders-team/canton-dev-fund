@@ -60,7 +60,9 @@ There is also a practical ecosystem adoption problem: Canton adoption improves w
 
 This proposal covers three workstreams that together provide multi-language, end-to-end developer enablement.
 
-These workstreams are not theoretical or speculative. **Based on our current observations, approximately 4–5 teams, including our own, are already using the Go SDK and Go Wallet SDK** in their development workflows. While this is still early adoption, it is already a meaningful signal that the tooling fills a real ecosystem need and merits ongoing maintenance as shared infrastructure.
+These workstreams are not theoretical or speculative. **Based on our current observations, approximately 4–5 teams, including our own, are already using the Go SDK and Go Wallet SDK** in their development workflows: Confimarket, Ferenc Fabian. While this is still early adoption, it is already a meaningful signal that the tooling fills a real ecosystem need and merits ongoing maintenance as shared infrastructure.
+
+
 
 ---
 
@@ -285,7 +287,44 @@ This funding structure reflects two distinct components:
 1. **Retroactive funding** for substantial infrastructure work already delivered and already being used by ecosystem teams.
 2. **Forward-looking maintenance funding** at **100,000 CC per month for 6 months** to ensure compatibility, hardening, documentation, educational support, and ecosystem coordination.
 
+The funding request is based on the following effort breakdown.
+
+### Retroactive development effort
+
+Go DAML SDK - ~950 person-hours
+This milestone covers Ledger API support, Admin and Topology support, typed DAR code generation, SDK architecture and API design, implementation, testing, packaging, documentation, and integration fixes discovered through real usage. The effort reflects the complexity of building a production-oriented Go SDK for Canton/DAML rather than a thin wrapper around existing APIs.
+
+Go Wallet SDK - ~520 person-hours
+This milestone covers wallet-facing abstractions, backend integration patterns, token-standard-oriented flows, early DApp API support, implementation, testing, documentation, and refinement based on practical usage. The effort reflects the work required to make the SDK usable for real backend services and application integrations.
+
+Python DAZL upstream contributions - ~140 person-hours
+This milestone covers investigation, implementation, compatibility work for newer protobuf / LF parsing versions, OpenAPI / JSON API support, upstream contribution iteration, and validation required to keep Python-based Canton developer workflows viable.
+
+Total retroactive development effort: ~1,610 person-hours
+
+### Forward-looking maintenance effort (6 months)
+
+M1. Maintenance baseline - ~200 person-hours
+Issue triage, bug fixing, dependency updates, release support, and documentation corrections required to keep the SDKs usable for current and new adopters.
+
+M2. Hardening and test coverage - ~200 person-hours
+Improving automated test coverage, handling edge cases, strengthening reliability of core SDK paths, and improving examples and integration safety for external developers.
+
+M3. Upgrade readiness - ~200 person-hours
+Compatibility work for upcoming Canton and dependency changes, validation against newer versions, migration fixes where needed, and readiness work to prevent downstream breakage for integrators.
+
+Total forward-looking maintenance effort: ~600 person-hours
+
+### Summary
+
+Retroactive delivered development effort: ~1,610 person-hours
+6-month maintenance, hardening, and upgrade-readiness effort: ~600 person-hours
+Total effort covered by the proposal: ~2,210 person-hours
+
+This work represents public developer infrastructure for the Canton ecosystem. The retroactive portion reflects engineering work already delivered, while the forward-looking portion ensures that the SDKs remain reliable, documented, compatible, and usable for ecosystem adopters as Canton evolves.
+
 After this 6-month period, any further maintenance and expansion work should be **reviewed as a continuation or renewal grant**, based on demonstrated usage, ecosystem demand, and the expected volume of compatibility work required by Canton and related upstream changes.
+
 
 ### Volatility Stipulation
 
