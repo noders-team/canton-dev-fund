@@ -60,9 +60,15 @@ There is also a practical ecosystem adoption problem: Canton adoption improves w
 
 This proposal covers three workstreams that together provide multi-language, end-to-end developer enablement.
 
-These workstreams are not theoretical or speculative. **Based on our current observations, approximately 4–5 teams, including our own, are already using the Go SDK and Go Wallet SDK** in their development workflows: Confimarket, Ferenc Fabian. While this is still early adoption, it is already a meaningful signal that the tooling fills a real ecosystem need and merits ongoing maintenance as shared infrastructure.
+These workstreams are not theoretical or speculative. **Based on our current observations, approximately 4–5 teams, including our own, are already using the Go SDK and Go Wallet SDK** in their development workflows. While this is still early adoption, it is already a meaningful signal that the tooling fills a real ecosystem need and merits ongoing maintenance as shared infrastructure.
 
+The development of these SDKs was not done in isolation. They are public ecosystem infrastructure developed with ongoing input from Digital Asset. Throughout the development process, we held demo sessions and incorporated feedback and recommendations from Bernhard Elsner and the DA team.
+There is already concrete ecosystem interest around this work. HackCanton starts on April 15, and nearly 20 applicant teams have told us they plan to build in Go, specifically using Go DAML SDK.
+Teams that have already used the SDKs:
 
+- Confimarket
+  
+In parallel, we also asked existing SDK users to leave comments on this proposal, so that the review can be informed not only by our description of the work, but also by direct feedback from teams building with these libraries.
 
 ---
 
@@ -287,7 +293,7 @@ This funding structure reflects two distinct components:
 1. **Retroactive funding** for substantial infrastructure work already delivered and already being used by ecosystem teams.
 2. **Forward-looking maintenance funding** at **100,000 CC per month for 6 months** to ensure compatibility, hardening, documentation, educational support, and ecosystem coordination.
 
-The funding request is based on the following effort breakdown.
+The requested amount reflects both already delivered engineering work and the estimated effort required to keep these libraries production-usable over the next 6 months.
 
 ### Retroactive development effort
 
@@ -302,7 +308,7 @@ This milestone covers investigation, implementation, compatibility work for newe
 
 Total retroactive development effort: ~1,610 person-hours
 
-### Forward-looking maintenance effort (6 months)
+Forward-looking maintenance effort (6 months)
 
 M1. Maintenance baseline - ~200 person-hours
 Issue triage, bug fixing, dependency updates, release support, and documentation corrections required to keep the SDKs usable for current and new adopters.
@@ -315,11 +321,10 @@ Compatibility work for upcoming Canton and dependency changes, validation agains
 
 Total forward-looking maintenance effort: ~600 person-hours
 
-### Summary
-
-Retroactive delivered development effort: ~1,610 person-hours
-6-month maintenance, hardening, and upgrade-readiness effort: ~600 person-hours
-Total effort covered by the proposal: ~2,210 person-hours
+Summary
+- Retroactive delivered development effort: ~1,610 person-hours
+- 6-month maintenance, hardening, and upgrade-readiness effort: ~600 person-hours
+- Total effort covered by the proposal: ~2,210 person-hours
 
 This work represents public developer infrastructure for the Canton ecosystem. The retroactive portion reflects engineering work already delivered, while the forward-looking portion ensures that the SDKs remain reliable, documented, compatible, and usable for ecosystem adopters as Canton evolves.
 
