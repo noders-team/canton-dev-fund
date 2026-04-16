@@ -224,7 +224,7 @@ Together, these three contributions reduce the cost of building on Canton and im
 
 ### Milestone 1: Maintenance Baseline + Compatibility Matrix
 
-- **Estimated Delivery:** 2026-04-15
+- **Estimated Delivery:** 2026-06-05
 - **Focus:** Establish predictable maintenance and confidence for ecosystem teams.
 - **Deliverables / Value Metrics:**
   - Publish a clear **compatibility matrix** (Go versions, supported Canton/DAML-LF ranges; Python DAZL compatibility notes for LF/protobuf and JSON/OpenAPI flows).
@@ -235,7 +235,7 @@ Together, these three contributions reduce the cost of building on Canton and im
 
 ### Milestone 2: Hardening + Test Coverage Expansion
 
-- **Estimated Delivery:** 2026-06-15
+- **Estimated Delivery:** 2026-08-05
 - **Focus:** Reduce production risk and improve developer UX.
 - **Deliverables / Value Metrics:**
   - Expand unit/integration tests for:
@@ -248,7 +248,7 @@ Together, these three contributions reduce the cost of building on Canton and im
 
 ### Milestone 3: Upgrade Readiness + Upstream Coordination
 
-- **Estimated Delivery:** 2026-08-20
+- **Estimated Delivery:** 2026-10-05
 - **Focus:** Stay aligned with ecosystem evolution and reduce “upgrade shock”.
 - **Deliverables / Value Metrics:**
   - Upgrade playbook: documented procedure to update libs for new Canton/DAML-LF/protobuf versions (including how to validate changes).
@@ -298,31 +298,31 @@ The requested amount reflects both already delivered engineering work and the es
 
 ### Retroactive development effort
 
-Go DAML SDK - ~950 person-hours
-This milestone covers Ledger API support, Admin and Topology support, typed DAR code generation, SDK architecture and API design, implementation, testing, packaging, documentation, and integration fixes discovered through real usage. The effort reflects the complexity of building a production-oriented Go SDK for Canton/DAML rather than a thin wrapper around existing APIs.
+**Go DAML SDK** - ~950 person-hours
+This workstream covers Ledger API support, Admin and Topology support, typed DAR code generation, SDK architecture and API design, implementation, testing, packaging, documentation, and integration fixes discovered through real usage. The effort reflects the complexity of building a production-oriented Go SDK for Canton/DAML rather than a thin wrapper around existing APIs.
 
-Go Wallet SDK - ~520 person-hours
-This milestone covers wallet-facing abstractions, backend integration patterns, token-standard-oriented flows, early DApp API support, implementation, testing, documentation, and refinement based on practical usage. The effort reflects the work required to make the SDK usable for real backend services and application integrations.
+**Go Wallet SDK** - ~520 person-hours
+This workstream covers wallet-facing abstractions, backend integration patterns, token-standard-oriented flows, early DApp API support, implementation, testing, documentation, and refinement based on practical usage. The effort reflects the work required to make the SDK usable for real backend services and application integrations.
 
-Python DAZL upstream contributions - ~140 person-hours
-This milestone covers investigation, implementation, compatibility work for newer protobuf / LF parsing versions, OpenAPI / JSON API support, upstream contribution iteration, and validation required to keep Python-based Canton developer workflows viable.
+**Python DAZL upstream contributions** - ~140 person-hours
+This workstream covers investigation, implementation, compatibility work for newer protobuf / LF parsing versions, OpenAPI / JSON API support, upstream contribution iteration, and validation required to keep Python-based Canton developer workflows viable.
 
-Total retroactive development effort: ~1,610 person-hours
+Total retroactive development effort: **~1,610 person-hours**
 
 Forward-looking maintenance effort (6 months)
 
-M1. Maintenance baseline - ~200 person-hours
+**M1. Maintenance baseline** - ~200 person-hours
 Issue triage, bug fixing, dependency updates, release support, and documentation corrections required to keep the SDKs usable for current and new adopters.
 
-M2. Hardening and test coverage - ~200 person-hours
+**M2. Hardening and test coverage** - ~200 person-hours
 Improving automated test coverage, handling edge cases, strengthening reliability of core SDK paths, and improving examples and integration safety for external developers.
 
-M3. Upgrade readiness - ~200 person-hours
+**M3. Upgrade readiness** - ~200 person-hours
 Compatibility work for upcoming Canton and dependency changes, validation against newer versions, migration fixes where needed, and readiness work to prevent downstream breakage for integrators.
 
 Total forward-looking maintenance effort: ~600 person-hours
 
-Summary
+**Summary**
 - Retroactive delivered development effort: ~1,610 person-hours
 - 6-month maintenance, hardening, and upgrade-readiness effort: ~600 person-hours
 - Total effort covered by the proposal: ~2,210 person-hours
@@ -359,8 +359,6 @@ These deliverables are valuable to the Canton ecosystem because they:
 - broaden the developer base by supporting both Go and Python workflows, including JSON/OpenAPI.
 
 This last point is especially important. Go is not a niche language choice in blockchain infrastructure: it is already used across production-grade systems that sit close to protocol, service, and tooling layers. That makes it a strong fit for the exact kinds of backend, service, and infrastructure systems Canton teams need to build around ledgers.
-
-In addition, **approximately 4–5 teams, including our own, are already using the Go SDK and Go Wallet SDK**. This is evidence that these libraries are not merely speculative infrastructure — they are already functioning as shared developer tooling within the ecosystem.
 
 In practice, this infrastructure helps teams ship faster and makes Canton more approachable for builders who would otherwise spend weeks re-implementing low-level glue.
 
