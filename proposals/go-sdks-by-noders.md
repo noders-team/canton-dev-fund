@@ -39,8 +39,6 @@ All **Go** libraries are released under the **Apache 2.0** open source license.
 - operational complexity around **Ledger API + Admin API + Topology Manager**;
 - fragmented tooling across languages (Go and Python), plus differences between gRPC-based APIs and JSON/OpenAPI-based APIs.
 
-There is also a practical ecosystem adoption problem: Canton adoption improves when teams can integrate it from the language stack they already use for infrastructure and backend systems. In blockchain, Go is already a proven infrastructure language rather than an experimental one: the Cosmos SDK is Go-based and used by 200+ production chains, Geth is the official Go implementation of Ethereum, and Chainlink’s core node is also built as Go-based infrastructure. This is highly relevant to Canton, because most ecosystem work around a ledger does not happen only in contracts — it happens in SDKs, wallet backends, relayers, admin tooling, CLIs, indexers, and API services. Supporting Go therefore lowers integration friction for blockchain teams and makes Canton easier to adopt without forcing them into an unfamiliar implementation stack.
-
 **Outcome:** Provide (and maintain) a stable, well-documented, well-tested set of **core developer building blocks**:
 - A Go SDK and code generator that lets developers build type-safe Canton/DAML integrations quickly.
 - A Go wallet/dApp backend library aligned with the Canton wallet interoperability direction.
