@@ -10,7 +10,7 @@
 
 This proposal requests **retroactive funding** for three infrastructure contributions already delivered to the Canton ecosystem, plus ongoing maintenance work as Canton, DAML-LF, and related APIs evolve.
 
-This proposal explicitly asks the Committee to recognize the value of the work that has **already been delivered and adopted**. We are requesting a total of **2,100,000 CC**, structured across four milestones: retroactive recognition of delivered infrastructure (M1, 500,000 CC), ongoing maintenance and compatibility (M2, 400,000 CC), a dedicated security audit and remediation cycle (M3, 500,000 CC), and production hardening with ecosystem adoption support (M4, 700,000 CC). M3 and M4 together represent 57% of the total request, reflecting the committee's guidance to weight later, verifiable deliverables more heavily.
+This proposal explicitly asks the Committee to recognize the value of the work that has **already been delivered and adopted**. We are requesting **1,500,000 CC** for the infrastructure work already completed, plus **100,000 CC per month for the next 6 months** to maintain, harden, document, and evolve these libraries in step with the Canton ecosystem. After this 6-month maintenance window, the grant should be **reviewed and reassessed** based on ecosystem adoption, roadmap needs, and the volume of ongoing compatibility work.
 
 The delivered work consists of:
 
@@ -19,8 +19,8 @@ The delivered work consists of:
 2. **Go Wallet SDK (DAML)** (`noders-team/go-wallet-daml`) — a Go library for building wallet / application backends on Canton, aligned with emerging Canton wallet / dApp interoperability patterns (including initial “DApp API support”), and designed to work with Token Standard and ledger RPCs.
 
 3. **Upstream Python contributions to Digital Asset’s DAZL client** (`digital-asset/dazl-client`) — two merged PRs adding:
-  - **protobuf “v3” / newer LF parsing support**
-  - **OpenAPI/JSON API client generation + sandbox JSON API support**
+   - **protobuf “v3” / newer LF parsing support**
+   - **OpenAPI/JSON API client generation + sandbox JSON API support**
 
    These contributions enable Python developers to integrate with newer Canton/Splice interfaces with less friction.
 
@@ -234,22 +234,11 @@ Together, these three contributions reduce the cost of building on Canton and im
 
 ## Milestones and Deliverables
 
-> Note: M1 recognizes already-delivered work retroactively. M2–M4 cover forward-looking maintenance, security, and hardening over approximately 6 months from grant acceptance.
+> Note: Since the development has already been delivered, the milestones below focus on **maintenance, compatibility, and hardening** over a 6-month support window.
 
-### Milestone 1: Open Source Delivery (Retroactive)
+### Milestone 1: Maintenance Baseline + Compatibility Matrix
 
-- **Payment:** 500,000 CC (upon committee acceptance)
-- **Focus:** Recognize and close out the infrastructure already delivered to the Canton ecosystem.
-- **Deliverables / Value Metrics:**
-  - Go DAML SDK (`noders-team/go-daml`) — full Ledger API + Admin/Topology client layer and type-safe DAR code generator, as documented in the Specification section above.
-  - Go Wallet SDK (`noders-team/go-wallet-daml`) — wallet/dApp backend library with Token Standard integration and DApp API support, as documented above.
-  - Upstream Python DAZL contributions (PRs #541 and #543 in `digital-asset/dazl-client`) — merged and publicly visible.
-  - All Go repos published under Apache 2.0.
-
-### Milestone 2: Maintenance Baseline + Compatibility Matrix
-
-- **Payment:** 400,000 CC
-- **Estimated Delivery:** 2026-06-15
+- **Estimated Delivery:** 2026-06-05
 - **Focus:** Establish predictable maintenance and confidence for ecosystem teams.
 - **Deliverables / Value Metrics:**
   - Publish a clear **compatibility matrix** (Go versions, supported Canton/DAML-LF ranges; Python DAZL compatibility notes for LF/protobuf and JSON/OpenAPI flows).
@@ -258,32 +247,33 @@ Together, these three contributions reduce the cost of building on Canton and im
   - Triage process: defined issue response SLA (e.g., initial response within 3 business days for critical integration issues).
   - Publish initial onboarding materials for new developer teams, including setup guides and reference usage patterns.
 
-### Milestone 3: Security Audit + Remediation
+### Milestone 2: Hardening + Test Coverage Expansion
 
-- **Payment:** 500,000 CC (breakdown: ~134,000 CC vendor audit fee + ~366,000 CC Noders remediation)
-- **Estimated Delivery:** 2026-08-15
-- **Focus:** Establish a formal, externally validated security baseline for the Go SDKs.
-- **Cost basis:** Vendor quote received — $20,000. The remaining ~366,000 CC covers Noders engineering time for scope definition, audit coordination, and full remediation.
+- **Estimated Delivery:** 2026-08-05
+- **Focus:** Reduce production risk and improve developer UX.
 - **Deliverables / Value Metrics:**
-  - Engage an independent security auditor to review the in-scope Go SDK code (auth, credential handling, gRPC transport, codec, cryptographic primitives, and wallet operations).
-  - Agree on audit scope with auditor and publish scope document.
-  - Receive and review audit report.
-  - Remediate all critical and high findings; document accepted/deferred medium and low findings with rationale.
-  - Publish post-audit remediation summary in the repos.
-  - Release patched versions of `go-daml` and `go-wallet-daml` with changelog entries referencing the audit.
+  - Expand unit/integration tests for:
+    - Go codegen determinism and schema edge cases;
+    - Go topology/admin operations coverage.
+  - Add at least 2 end-to-end reference examples:
+    - Go example using generated types + ledger interactions.
+  - Release at least one tagged version for each Go repo (as needed based on fixes and upstream changes).
+  - Produce developer-facing educational materials that make adoption easier for additional Canton ecosystem teams.
 
-### Milestone 4: Production Hardening + Ecosystem Adoption
+### Milestone 3: Upgrade Readiness + Upstream Coordination
 
-- **Payment:** 700,000 CC
-- **Estimated Delivery:** 2026-10-25
-- **Focus:** Reduce production risk, expand test coverage, and support ecosystem teams in adopting the SDKs.
+- **Estimated Delivery:** 2026-10-05
+- **Focus:** Stay aligned with ecosystem evolution and reduce “upgrade shock”.
 - **Deliverables / Value Metrics:**
-  - Expand unit/integration tests for Go codegen determinism, schema edge cases, and topology/admin operations.
-  - Add at least 2 end-to-end reference examples using generated types and ledger interactions.
-  - Upgrade playbook: documented procedure to update libraries for new Canton/DAML-LF/protobuf versions.
-  - At least one upstream coordination cycle (DAZL follow-ups and CIP-adjacent wallet/dApp interoperability alignment).
-  - Organize ecosystem enablement activities (workshops, walkthroughs, or office hours).
-  - Final maintenance report: issues resolved, release notes, known limitations, and roadmap suggestions.
+  - Upgrade playbook: documented procedure to update libs for new Canton/DAML-LF/protobuf versions (including how to validate changes).
+  - At least one upstream coordination cycle:
+    - work with Digital Asset maintainers on DAZL follow-ups (if required);
+    - align with Canton Foundation Tech & Ops on any CIP-adjacent changes affecting wallet/dApp interoperability.
+  - Organize ecosystem enablement activities (e.g., workshops, walkthroughs, or office hours) to help teams adopt the SDKs effectively.
+  - Final maintenance report with:
+    - issues resolved;
+    - release notes;
+    - known limitations and roadmap suggestions.
 
 ---
 
@@ -308,20 +298,15 @@ Project-specific conditions:
 
 ### Payment Breakdown by Milestone
 
-| Milestone | Description | Payment | % of Total |
-| --- | --- | --- | --- |
-| M1 | Open Source Delivery (retroactive) | 500,000 CC | 24% |
-| M2 | Maintenance Baseline + Compatibility Matrix | 400,000 CC | 19% |
-| M3 | Security Audit + Remediation | 500,000 CC | 24% |
-| M4 | Production Hardening + Ecosystem Adoption | 700,000 CC | 33% |
-| **Total** |  | **2,100,000 CC** | **100%** |
-
-M3 + M4 combined = **1,200,000 CC (57%)** — the majority of the request is tied to forward-looking, verifiable deliverables.
+- **1,500,000 CC** upon committee acceptance to recognize and fund the infrastructure work that has already been delivered to the Canton ecosystem.
+- **200,000 CC** for Milestone 1 (Maintenance Baseline + Compatibility Matrix) upon committee acceptance.
+- **200,000 CC** for Milestone 2 (Hardening + Test Coverage Expansion) upon committee acceptance.
+- **200,000 CC** for Milestone 3 (Upgrade Readiness + Upstream Coordination) upon final release and acceptance.
 
 This funding structure reflects two distinct components:
 
-1. **Retroactive funding** (M1) for substantial infrastructure work already delivered and already being used by ecosystem teams.
-2. **Forward-looking work** (M2–M4) covering maintenance, security hardening, and ecosystem adoption support.
+1. **Retroactive funding** for substantial infrastructure work already delivered and already being used by ecosystem teams.
+2. **Forward-looking maintenance funding** at **100,000 CC per month for 6 months** to ensure compatibility, hardening, documentation, educational support, and ecosystem coordination.
 
 The requested amount reflects both already delivered engineering work and the estimated effort required to keep these libraries production-usable over the next 6 months.
 
@@ -336,20 +321,20 @@ This workstream covers wallet-facing abstractions, backend integration patterns,
 **Python DAZL upstream contributions** - ~140 person-hours
 This workstream covers investigation, implementation, compatibility work for newer protobuf / LF parsing versions, OpenAPI / JSON API support, upstream contribution iteration, and validation required to keep Python-based Canton developer workflows viable.
 
-Total retroactive development effort: **\~1,610 person-hours**
+Total retroactive development effort: **~1,610 person-hours**
 
 Forward-looking maintenance effort (6 months)
 
-**M2. Maintenance Baseline + Compatibility Matrix** - ~200 person-hours
+**M1. Maintenance baseline** - ~200 person-hours
 Issue triage, bug fixing, dependency updates, release support, and documentation corrections required to keep the SDKs usable for current and new adopters.
 
-**M3. Security Audit + Remediation** - ~200 person-hours
-Scope definition, audit coordination, remediation of findings, and release of patched versions for both Go repos.
+**M2. Hardening and test coverage** - ~200 person-hours
+Improving automated test coverage, handling edge cases, strengthening reliability of core SDK paths, and improving examples and integration safety for external developers.
 
-**M4. Production Hardening + Ecosystem Adoption** - ~200 person-hours
-Expanding test coverage, adding end-to-end examples, upgrade playbook, upstream coordination cycle, and ecosystem enablement activities.
+**M3. Upgrade readiness** - ~200 person-hours
+Compatibility work for upcoming Canton and dependency changes, validation against newer versions, migration fixes where needed, and readiness work to prevent downstream breakage for integrators.
 
-Total forward-looking effort: ~600 person-hours
+Total forward-looking maintenance effort: ~600 person-hours
 
 **Summary**
 - Retroactive delivered development effort: ~1,610 person-hours
@@ -360,6 +345,11 @@ This work represents public developer infrastructure for the Canton ecosystem. T
 
 After this 6-month period, any further maintenance and expansion work should be **reviewed as a continuation or renewal grant**, based on demonstrated usage, ecosystem demand, and the expected volume of compatibility work required by Canton and related upstream changes.
 
+
+### Volatility Stipulation
+
+If the project duration is **under 6 months**:  
+Should the project timeline extend beyond 6 months due to Committee-requested scope changes, any remaining milestones must be renegotiated to account for significant USD/CC price volatility.
 
 ---
 
