@@ -264,10 +264,11 @@ Together, these three contributions reduce the cost of building on Canton and im
 - **Payment:** 560,000 CC (breakdown: ~160,000 CC vendor audit fee + ~400,000 CC Noders remediation)
 - **Estimated Delivery:** 2026-08-15
 - **Focus:** Establish a formal, externally validated security baseline for the Go SDKs.
-- **Cost basis:** Vendor quote received — $24,000. The remaining ~400,000 CC covers Noders engineering time for scope definition, audit coordination, and full remediation.
+- **Cost basis:** Vendor quote received ([Cure53](https://cure53.de/)) — $24,000. The remaining ~400,000 CC covers Noders engineering time for scope definition, audit coordination, and full remediation.
+- **Audit scope:** Production-relevant code in `go-daml` and `go-wallet-daml`, including authentication, credential handling, gRPC transport, codec/serialization logic, cryptographic primitives, wallet operations, and any code generation or supporting components that may affect production behavior. A detailed scope document will be agreed with the auditor and published before the audit starts.
 - **Deliverables / Value Metrics:**
-  - Engage an independent security auditor to review the in-scope Go SDK code (auth, credential handling, gRPC transport, codec, cryptographic primitives, and wallet operations).
-  - Agree on audit scope with auditor and publish scope document.
+  - Engage an independent security auditor to review the in-scope Go SDK code.
+  - Agree on audit scope with auditor and security subcommittee; publish scope document.
   - Receive and review audit report.
   - Remediate all critical and high findings; document accepted/deferred medium and low findings with rationale.
   - Publish post-audit remediation summary in the repos.
