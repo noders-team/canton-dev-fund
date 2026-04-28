@@ -11,7 +11,7 @@
 This proposal requests retroactive funding for three infrastructure contributions already delivered to the Canton ecosystem, as well as additional support for ongoing maintenance, compatibility, security audit and remediation, production hardening, and ecosystem adoption as Canton, DAML-LF, and related APIs evolve.
 
 This proposal explicitly asks the Committee to recognize the value of the work that has **already been delivered and adopted**. We are requesting a total of **2,260,000 CC (including 160,000 CC audit fee)**, structured across four milestones: retroactive recognition of delivered infrastructure (M1: 700,000 CC), ongoing maintenance and compatibility (M2: 300,000 CC), a dedicated security audit and remediation cycle (M3: 560,000 CC), and production hardening with ecosystem adoption support (M4: 700,000 CC). 
-Payment for M1 (31%) is requested upon approval, as it reflects retroactive funding for work already delivered. Payments for M2-M4 (69%) would be made upon completion and acceptance of each respective milestone.
+Payment for M1 (31%) is requested upon grant approval, as it reflects retroactive funding for work already delivered. Payments for M2 and M3 are made upon completion and acceptance of each milestone. M4 is paid incrementally: 100,000 CC per Featured App upon each app's mainnet deployment (up to 5 apps), plus 200,000 CC upon completion of the full milestone.
 
 The delivered work consists of:
 
@@ -64,7 +64,7 @@ This proposal covers three workstreams that together provide multi-language, end
 These workstreams are not theoretical or speculative. **Based on our current observations, approximately 4–5 teams, including our own, are already using the Go SDK and Go Wallet SDK** in their development workflows. While this is still early adoption, it is already a meaningful signal that the tooling fills a real ecosystem need and merits ongoing maintenance as shared infrastructure.
 
 The development of these SDKs was not done in isolation. They are public ecosystem infrastructure developed with ongoing input from Digital Asset. Throughout the development process, we held demo sessions and incorporated feedback and recommendations from Bernhard Elsner and the DA team.
-There is already concrete ecosystem interest around this work. HackCanton starts on April 15, and nearly 20 applicant teams have told us they plan to build in Go, specifically using Go DAML SDK.
+There is already concrete ecosystem interest around this work. HackCanton launched on April 15, and nearly 20 applicant teams indicated they plan to build in Go, specifically using Go DAML SDK.
 Teams that have already used the SDKs:
 
 - Confimarket
@@ -239,7 +239,7 @@ Together, these three contributions reduce the cost of building on Canton and im
 
 ### Milestone 1: Open Source Delivery (Retroactive)
 
-- **Payment:** 700,000 CC
+- **Payment:** 700,000 CC — upon grant approval
 - **Focus:** Recognize and close out the infrastructure already delivered to the Canton ecosystem.
 - **Deliverables / Value Metrics:**
   - Go DAML SDK (`noders-team/go-daml`) — full Ledger API + Admin/Topology client layer and type-safe DAR code generator, as documented in the Specification section above.
@@ -250,7 +250,7 @@ Together, these three contributions reduce the cost of building on Canton and im
 ### Milestone 2: Maintenance Baseline + Compatibility Matrix
 
 - **Payment:** 300,000 CC
-- **Estimated Delivery:** 2026-06-15
+- **Deadline:** 2 months after grant approval
 - **Focus:** Establish predictable maintenance and confidence for ecosystem teams.
 - **Deliverables / Value Metrics:**
   - Publish a clear **compatibility matrix** (Go versions, supported Canton/DAML-LF ranges; Python DAZL compatibility notes for LF/protobuf and JSON/OpenAPI flows).
@@ -262,7 +262,7 @@ Together, these three contributions reduce the cost of building on Canton and im
 ### Milestone 3: Security Audit + Remediation
 
 - **Payment:** 560,000 CC (breakdown: ~160,000 CC vendor audit fee + ~400,000 CC Noders remediation)
-- **Estimated Delivery:** 2026-08-15
+- **Deadline:** 4 months after grant approval
 - **Focus:** Establish a formal, externally validated security baseline for the Go SDKs.
 - **Cost basis:** Vendor quote received ([Cure53](https://cure53.de/)) — $24,000. The remaining ~400,000 CC covers Noders engineering time for scope definition, audit coordination, and full remediation.
 - **Audit scope:** Production-relevant code in `go-daml` and `go-wallet-daml`, including authentication, credential handling, gRPC transport, codec/serialization logic, cryptographic primitives, wallet operations, and any code generation or supporting components that may affect production behavior. A detailed scope document will be agreed with the auditor and published before the audit starts.
@@ -276,8 +276,8 @@ Together, these three contributions reduce the cost of building on Canton and im
 
 ### Milestone 4: Production Hardening + Ecosystem Adoption
 
-- **Payment:** 700,000 CC
-- **Estimated Delivery:** 2026-10-25
+- **Payment:** 700,000 CC total — 100,000 CC per Featured App upon each app's mainnet deployment (up to 5 apps = 500,000 CC), plus 200,000 CC upon completion of the full milestone.
+- **Deadline:** 8 months after grant approval
 - **Focus:** Reduce production risk, expand test coverage, and support ecosystem adoption of the SDKs, including use by Featured Apps in production on mainnet.
 - **Deliverables / Value Metrics:**
   - At least 5 Featured Apps using the Go SDK in production on mainnet.
@@ -286,7 +286,7 @@ Together, these three contributions reduce the cost of building on Canton and im
   - Upgrade playbook: documented procedure to update libraries for new Canton/DAML-LF/protobuf versions.
   - At least one upstream coordination cycle (DAZL follow-ups and CIP-adjacent wallet/dApp interoperability alignment).
   - Organize ecosystem enablement activities (workshops, walkthroughs, or office hours).
-  - Final maintenance report: issues resolved, release notes, known limitations, and roadmap
+  - Final maintenance report: issues resolved, release notes, known limitations, and roadmap suggestions.
 
 ---
 
@@ -316,13 +316,14 @@ Project-specific conditions:
 | M1 | Open Source Delivery (retroactive) | 700,000 CC | 31% |
 | M2 | Maintenance Baseline + Compatibility Matrix | 300,000 CC | 13% |
 | M3 | Security Audit + Remediation | 560,000 CC | 25% |
-| M4 | Production Hardening + Ecosystem Adoption | 700,000 CC | 31% |
+| M4 | Production Hardening + Ecosystem Adoption | 700,000 CC (100k/Featured App + 200k on completion) | 31% |
 | **Total** |  | **2,260,000 CC (incl. 160,000 CC audit fee)** | **100%** |
 
 This funding structure reflects two distinct components:
 
-1. **Payment for Milestone 1 (31%)** is requested upon approval, as it reflects retroactive funding for work already delivered
-2. **Payments for Milestones 2-4 (69%)** would be made upon completion and acceptance of each respective milestone.
+1. **Payment for Milestone 1 (31%)** is requested upon grant approval, as it reflects retroactive funding for work already delivered.
+2. **Payments for Milestones 2 and 3 (38%)** are made upon completion and acceptance of each respective milestone.
+3. **Payment for Milestone 4 (31%)** is made incrementally: 100,000 CC per Featured App upon each app's mainnet deployment (up to 5 apps = 500,000 CC), plus 200,000 CC upon completion of the full milestone.
 
 The requested amount reflects both the retroactive value of the infrastructure already delivered and the additional engineering and support work required over the next six months for maintenance, compatibility, security audit and remediation, production hardening, documentation, testing, and ecosystem adoption.
 
